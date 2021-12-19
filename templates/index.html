@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+   <head>
+      <title>SNMS DATA</title>
+      <style>
+         table{
+            overflow-y:scroll;
+            height: 350px;;
+            display:block;
+            width: 50%;
+         }
+      </style>
+   </head>
+   <body>
+      <div>
+         <img src="http://images.newindianexpress.com/uploads/user/ckeditor_images/article/2017/10/20/Noisea.JPG">
+      </div>
+      <table border="1">
+         <tr>
+            <th>Sound Levels</th>
+         </tr>
+         {%for i in to_send%}
+         <tr>
+            {% if i[2]>=50 %}
+                  <td style="color:red;">{{i}}</td>
+            {% else %}
+                  <td style="color:black;">{{i}}</td>
+            {% endif %}
+         </tr>
+         {%endfor%}
+         
+         <!-- <tr>
+            <td>{{to_send}}</td>
+         </tr> -->
+      </table>
+   </body>
+</html>
